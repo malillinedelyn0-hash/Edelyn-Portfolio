@@ -26,9 +26,9 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Renz Marcel S. De Vera | IT Portfolio</title>
+  <title>Edelyn Y. Malillin | IT Professional Portfolio</title>
   <style>
-/* Modern CSS Reset & Base Styles */
+/* Professional CSS Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -36,43 +36,41 @@ s0.parentNode.insertBefore(s1,s0);
 }
 
 :root {
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --primary-light: #818cf8;
-  --accent: #ec4899;
-  --bg: #0f172a;
-  --bg-light: #1e293b;
-  --bg-card: #1e293b;
-  --text: #f1f5f9;
-  --text-muted: #94a3b8;
-  --border: #334155;
-  --shadow: rgba(0, 0, 0, 0.3);
-  --overlay: rgba(15, 23, 42, 0.95);
+  --primary: #1a365d;
+  --primary-light: #2d5a8c;
+  --accent: #2b6cb0;
+  --accent-light: #4a90e2;
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --bg-card: #ffffff;
+  --text: #1a202c;
+  --text-muted: #4a5568;
+  --text-light: #718096;
+  --border: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --shadow-strong: rgba(0, 0, 0, 0.12);
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Tawk.to Widget - Ensure it appears above all elements */
+/* Tawk.to Widget */
 .tawk-frame-iframe,
 .tawk-chat-iframe {
   z-index: 10001 !important;
 }
 
-/* Hero Section */
+/* Header Section */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  padding: 6rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   position: relative;
   overflow: hidden;
 }
@@ -80,83 +78,62 @@ body {
 .hero::before {
   content: '';
   position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-  opacity: 0.1;
-  top: -250px;
-  right: -250px;
-  animation: pulse 8s ease-in-out infinite;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
 }
 
 .hero::after {
   content: '';
   position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-  opacity: 0.1;
-  bottom: -200px;
-  left: -200px;
-  animation: pulse 6s ease-in-out infinite reverse;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.1; }
-  50% { transform: scale(1.2); opacity: 0.15; }
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 50%;
+  bottom: -80px;
+  left: -80px;
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--primary-light), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
   z-index: 1;
-  animation: slideDown 0.8s ease-out;
+  position: relative;
+  letter-spacing: -0.5px;
 }
 
 .hero p {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-  color: var(--text-muted);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.9);
   z-index: 1;
-  animation: slideDown 0.8s ease-out 0.2s both;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  position: relative;
+  font-weight: 400;
 }
 
 /* Navigation */
 .nav {
   position: sticky;
   top: 0;
-  background: rgba(30, 41, 59, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: white;
+  border-bottom: 1px solid var(--border);
   padding: 1rem 2rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  border-bottom: 1px solid var(--border);
+  gap: 3rem;
   z-index: 100;
-  animation: slideDown 0.8s ease-out 0.4s both;
+  box-shadow: 0 1px 3px var(--shadow);
 }
 
 .nav a {
   color: var(--text-muted);
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
   position: relative;
   padding: 0.5rem 0;
 }
@@ -167,152 +144,164 @@ body {
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
+  height: 3px;
+  background: var(--accent);
   transition: width 0.3s ease;
 }
 
 .nav a:hover {
-  color: var(--text);
+  color: var(--accent);
 }
 
 .nav a:hover::after {
   width: 100%;
 }
 
-/* Container */
+/* Main Container */
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
 }
 
 .container h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 2rem;
-  background: linear-gradient(135deg, var(--primary-light), var(--text));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: var(--primary);
+  font-weight: 700;
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 1rem;
+  display: inline-block;
+}
+
+.container p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
 }
 
 /* Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
 .skills-grid span {
-  background: var(--bg-card);
-  padding: 1.5rem;
-  border-radius: 12px;
+  background: var(--bg-alt);
+  padding: 1.25rem;
+  border-radius: 8px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px solid var(--border);
   transition: all 0.3s ease;
   cursor: default;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .skills-grid span:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+  background: white;
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px var(--shadow);
+  color: var(--accent);
 }
 
 /* Certificate Grid */
 .certificate-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   margin-top: 2rem;
+}
+
+.certificate-grid span {
+  background: var(--bg-alt);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-weight: 500;
+  text-align: center;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.certificate-grid span:hover {
+  background: white;
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px var(--shadow);
+  color: var(--accent);
 }
 
 /* Contact Link */
 .contact-link {
-  color: var(--primary-light);
+  color: var(--accent);
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s ease;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  border-bottom: 1px solid transparent;
 }
 
 .contact-link:hover {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-.certificate-grid span {
-  background: var(--bg-card);
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: 600;
-  border: 1px solid var(--border);
-  transition: all 0.3s ease;
-  cursor: default;
-}
-
-.certificate-grid span:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+  color: var(--primary);
+  border-bottom-color: var(--accent);
 }
 
 /* Project Grid */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
 /* Card Styles */
 .card {
-  background: var(--bg-card);
+  background: white;
   padding: 2rem;
-  border-radius: 16px;
+  border-radius: 8px;
   border: 1px solid var(--border);
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 1px 3px var(--shadow);
 }
 
-.card::before {
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 24px var(--shadow-strong);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.card p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.card::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 3px;
+  height: 0;
+  background: var(--accent);
+  transition: height 0.3s ease;
+}
+
+.card:hover::after {
   height: 100%;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.card:hover::before {
-  opacity: 0.1;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
-}
-
-.card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--text);
-  position: relative;
-  z-index: 1;
-}
-
-.card p {
-  color: var(--text-muted);
-  position: relative;
-  z-index: 1;
 }
 
 /* Modal Styles */
@@ -323,15 +312,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--overlay);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1000;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   animation: fadeIn 0.3s ease-out;
-  cursor: pointer;
 }
 
 @keyframes fadeIn {
@@ -340,61 +326,48 @@ body {
 }
 
 .modal-content {
-  background: var(--bg-light);
-  border-radius: 24px;
-  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
   max-width: 900px;
   width: 100%;
-  max-height: 90vh;
+  max-height: 85vh;
   overflow-y: auto;
   position: relative;
-  cursor: default;
-  animation: slideUp 0.4s ease-out;
-  border: 1px solid var(--border);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease-out;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(50px) scale(0.95);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
-}
-
-.contact-link {
-  color: var(--primary-light);
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-
-.contact-link:hover {
-  color: var(--accent);
-  text-decoration: underline;
 }
 
 .modal-content img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
   border: 1px solid var(--border);
-  transition: opacity 0.2s ease-in-out;
 }
 
 .modal-content h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: var(--text);
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .modal-content p {
   color: var(--text-muted);
   line-height: 1.8;
+  font-size: 0.95rem;
 }
 
 /* Carousel Controls */
@@ -402,29 +375,29 @@ body {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .carousel-controls button {
-  background: var(--primary);
+  background: var(--accent);
   color: white;
   border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
+  font-weight: 600;
 }
 
 .carousel-controls button:hover {
-  background: var(--primary-dark);
-  transform: scale(1.1);
-  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+  background: var(--primary);
+  transform: scale(1.05);
 }
 
 .carousel-controls button:active {
@@ -434,8 +407,8 @@ body {
 /* Reveal Animation */
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
 }
 
 .reveal.active {
@@ -445,40 +418,51 @@ body {
 
 /* Footer */
 footer {
-  background: var(--bg-light);
+  background: var(--bg-alt);
   text-align: center;
-  padding: 2rem;
+  padding: 2.5rem;
   color: var(--text-muted);
   border-top: 1px solid var(--border);
+  font-size: 0.9rem;
 }
 
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+  background: var(--bg-alt);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 5px;
+  background: var(--accent);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-dark);
+  background: var(--primary);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav {
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
   }
   
   .container {
-    padding: 3rem 1rem;
+    padding: 2.5rem 1rem;
+  }
+
+  .container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
   }
   
   .project-grid {
@@ -486,15 +470,55 @@ footer {
   }
   
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
-  
-  .modal {
-    padding: 1rem;
+
+  .hero {
+    padding: 4rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
   }
   
   .modal-content {
     padding: 1.5rem;
+  }
+
+  .carousel-controls {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+
+  .nav a {
+    font-size: 0.85rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .container h2 {
+    font-size: 1.25rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .modal-content h3 {
+    font-size: 1.4rem;
   }
 }
   </style>
@@ -503,123 +527,117 @@ footer {
 
 <header class="hero">
   <h1>Edelyn Y. Malillin</h1>
-  <p>IT Student • Web & System Development</p>
+  <p>IT Professional • Full Stack Developer</p>
 </header>
 
 <nav class="nav">
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
+  <a href="#certificate">Certificate</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <section id="about" class="container reveal">
   <h2>About Me</h2>
-  <p>An IT graduate with practical experience across the full development lifecycle — from web and mobile applications to desktop systems and technical support. Driven by curiosity, a commitment to [...]
+  <p>A dedicated IT professional with comprehensive experience in the complete software development lifecycle. Specialized in web applications, mobile development, desktop systems, and technical infrastructure support. Committed to delivering high-quality solutions that drive business value and user satisfaction.</p>
 </section>
 
 <section id="skills" class="container reveal">
-  <h2>Skills</h2>
+  <h2>Technical Skills</h2>
   <div class="skills-grid">
     <span>Web Development</span>
-    <span>Web System Application</span>
+    <span>Web System Applications</span>
     <span>Mobile Application Development</span>
     <span>Desktop Application Development</span>
-    <span>Basic and Advanced Hardware and Software Troubleshooting</span>
-    <span>AI Automation</span>
+    <span>System Troubleshooting</span>
+    <span>AI & Automation</span>
   </div>
 </section>
 
-  <section id="certificate" class="container reveal">
-  <h2>Certificate</h2>
+<section id="certificate" class="container reveal">
+  <h2>Professional Credentials</h2>
   <div class="certificate-grid">
-    <span>National Certificate II in Philippine College of Science and Technology 2024-2029</span>
+    <span>National Certificate II in IT<br>Philippine College of Science and Technology<br>Valid through 2029</span>
   </div>
 </section>
 
 <section id="projects" class="container reveal">
-  <h2>Projects</h2>
+  <h2>Featured Projects</h2>
 
   <div class="project-grid">
 
     <div class="card" onclick="openModal(
       ['assets/Payroll/payroll_dashboard.jpg','assets/Payroll/payroll_employees.jpg','assets/Payroll/payroll_process.jpg','assets/Payroll/payroll_reports.jpg','assets/Payroll/payroll_settings.jpg'],
-      'Payroll System',
-      'A comprehensive desktop payroll application with employee records, salary computation, salary advance options, and automatic benefits/other deduction processing.'
+      'Payroll Management System',
+      'Desktop application designed for comprehensive payroll administration. Features include employee records management, automated salary computation, salary advance processing, and integrated benefits and deduction calculations.'
     )">
       <h3>Payroll System</h3>
-      <p>Desktop Payroll Application</p>
+      <p>Desktop Application • Payroll Processing</p>
     </div>
 
     <div class="card" onclick="openModal(
       ['assets/Mers/login_mers.jpg','assets/Mers/physician_home.jpg', 'assets/Mers/physician_dashboard.jpg', 'assets/Mers/user_dashboard.jpg'],
-      'Medical Record System',
-      'Student medical record management system with appointment scheduling, and medical history storage. Built with modern web technologies for efficient healthcare management.'
+      'Medical Records System',
+      'Web-based student medical record management platform with appointment scheduling, medical history tracking, and secure data storage. Built with modern technologies for efficient healthcare administration.'
     )">
       <h3>Medical Record System</h3>
-      <p>Student medical record management</p>
+      <p>Web Application • Healthcare Management</p>
     </div>
 
     <div class="card" onclick="openModal(
       [],
       'Mobile Application',
-      'A mobile application developed using Flutter for song management, with unique login feature requiring user for an OTP to get verified.'
+      'Cross-platform mobile application developed with Flutter framework. Features comprehensive song management functionality with secure authentication using OTP verification system.'
     )">
-      <h3>Mobile Application</h3>
-      <p>Mobile Application developed using Flutter</p>
+      <h3>Music Management App</h3>
+      <p>Mobile Application • Flutter</p>
     </div>
 
     <div class="card" onclick="openModal(
       ['assets/Pos/cashier.jpg','assets/Pos/inventory.jpg', 'assets/Pos/orders.jpg', 'assets/Pos/reports.jpg','assets/Pos/users.jpg','assets/Pos/roles.jpg'],
-      'POS System',
-      'A desktop application developed using Tauri, TypeScript, Python for point of sale system with inventory management, sales tracking, and reporting features.'
+      'Point of Sale System',
+      'Enterprise-grade desktop POS application developed using modern technologies. Includes inventory management, sales tracking, comprehensive reporting, user management, and role-based access control.'
     )">
       <h3>POS System</h3>
-      <p>Desktop Application developed using Tauri, Typescript and Python</p>
+      <p>Desktop Application • Tauri, TypeScript, Python</p>
     </div>
 
   </div>
 </section>
 
-
 <section id="contact" class="container reveal">
-  <h2>Contact</h2>
+  <h2>Get In Touch</h2>
+  <p style="margin-bottom: 2rem;">I'm available for professional inquiries, collaboration, and project discussions.</p>
 
-  <p>Contact Number: 09197762601</p>
+  <p style="margin-bottom: 1rem;">
+    <strong>Phone:</strong> <a href="tel:+639197762601" class="contact-link">+63 919-776-2601</a>
+  </p>
 
-  <p>
-    Email:
-    <a
-      href="mailto:renzmdevera@email.com?subject=Portfolio Inquiry"
-      id="contactBtn"
-      class="contact-link"
-    >
+  <p style="margin-bottom: 1rem;">
+    <strong>Email:</strong> 
+    <a href="mailto:renzmdevera@email.com?subject=Professional Inquiry" id="contactBtn" class="contact-link">
       renzmdevera@email.com
     </a>
   </p>
 
   <p>
-    GitHub:
-    <a
-      href="https://github.com/renzdevera-dev"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="contact-link"
-      id="githubBtn"
-    >
+    <strong>GitHub:</strong>
+    <a href="https://github.com/renzdevera-dev" target="_blank" rel="noopener noreferrer" class="contact-link" id="githubBtn">
       github.com/renzdevera-dev
     </a>
   </p>
 </section>
+
 <footer>
-  © 2026 Renz Marcel S. De Vera
+  &copy; 2026 Edelyn Y. Malillin. All rights reserved. | IT Professional Portfolio
 </footer>
 
 <!-- MODAL -->
 <div id="modal" class="modal" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
-    <img id="modalImg" alt="Project screenshot">
-    <div class="carousel-controls">
+    <img id="modalImg" alt="Project screenshot" style="display: none;">
+    <div class="carousel-controls" style="display: none;">
       <button onclick="prevImg(event)" aria-label="Previous image">‹</button>
       <button onclick="nextImg(event)" aria-label="Next image">›</button>
     </div>
@@ -627,6 +645,7 @@ footer {
     <p id="modalDesc"></p>
   </div>
 </div>
+
 <script>
 // Modal Elements
 const modal = document.getElementById("modal");
@@ -658,10 +677,6 @@ function openModal(imgData, title = '', desc = '') {
   modalDesc.textContent = desc;
 
   modal.style.display = "flex";
-
-  setTimeout(() => {
-    modal.style.opacity = "1";
-  }, 10);
 
   document.body.style.overflow = 'hidden';
 
@@ -842,5 +857,4 @@ revealOnScroll();
 </script>
 
 </body>
-</html>
 </html>
