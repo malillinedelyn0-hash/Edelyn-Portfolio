@@ -30,7 +30,7 @@ s0.parentNode.insertBefore(s1,s0);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edelyn Y. Malillin | IT Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
 /* Professional CSS Reset & Base Styles */
 * {
@@ -61,6 +61,10 @@ s0.parentNode.insertBefore(s1,s0);
   --rose: #fce7f3;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--bg);
@@ -78,11 +82,17 @@ body {
 /* Header Section */
 .hero {
   background: linear-gradient(135deg, var(--primary) 0%, var(--accent-light) 50%, var(--secondary-light) 100%);
+  background-attachment: fixed;
   color: white;
-  padding: 6rem 2rem;
+  padding: 8rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero::before {
@@ -111,44 +121,74 @@ body {
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
   z-index: 1;
   position: relative;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
   font-family: 'Playfair Display', serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero p {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
   color: rgba(255, 255, 255, 0.95);
   z-index: 1;
   position: relative;
   font-weight: 400;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button {
+  padding: 0.75rem 2rem;
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.cta-button:hover {
+  background: white;
+  color: var(--primary);
+  transform: translateY(-2px);
 }
 
 /* Navigation */
 .nav {
   position: sticky;
   top: 0;
-  background: linear-gradient(to bottom, var(--bg), rgba(255, 245, 249, 0.95));
+  background: linear-gradient(to bottom, var(--bg), rgba(255, 245, 249, 0.98));
   border-bottom: 2px solid var(--primary-lighter);
   padding: 1rem 2rem;
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
   z-index: 100;
   box-shadow: 0 4px 15px var(--shadow);
   backdrop-filter: blur(10px);
+  flex-wrap: wrap;
 }
 
 .nav a {
   color: var(--text-muted);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
   position: relative;
   padding: 0.5rem 0;
@@ -176,57 +216,67 @@ body {
 
 /* Main Container */
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .container h2 {
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  margin-bottom: 3rem;
   color: var(--primary);
-  font-weight: 700;
+  font-weight: 800;
   font-family: 'Playfair Display', serif;
-  border-bottom: 3px solid var(--gold);
-  padding-bottom: 1rem;
+  border-bottom: 4px solid var(--gold);
+  padding-bottom: 1.5rem;
   display: inline-block;
   position: relative;
 }
 
 .container h2::before {
   content: '✨';
-  margin-right: 0.5rem;
-  font-size: 1.5rem;
+  margin-right: 0.75rem;
+  font-size: 2rem;
 }
 
 .container p {
   color: var(--text-muted);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Section Styling */
+section {
+  position: relative;
+}
+
+section:nth-child(odd) {
+  background: var(--bg-alt);
 }
 
 /* Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
 }
 
 .skills-grid span {
   background: linear-gradient(135deg, var(--rose) 0%, rgba(244, 114, 182, 0.1) 100%);
-  padding: 1.25rem;
-  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
   text-align: center;
   font-weight: 600;
   border: 2px solid var(--primary-lighter);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   cursor: default;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 1rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .skills-grid span::before {
@@ -235,57 +285,58 @@ body {
   top: -20px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.5rem;
+  font-size: 2rem;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .skills-grid span:hover {
   background: linear-gradient(135deg, var(--primary-lighter) 0%, var(--secondary-light) 100%);
   border-color: var(--primary);
-  box-shadow: 0 8px 20px var(--shadow-strong);
+  box-shadow: 0 12px 30px var(--shadow-strong);
   color: white;
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.05);
 }
 
 .skills-grid span:hover::before {
   opacity: 1;
-  top: 5px;
+  top: 8px;
 }
 
 /* Certificate Grid */
 .certificate-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 2rem;
+  margin-top: 2.5rem;
 }
 
 .certificate-grid span {
   background: linear-gradient(135deg, var(--rose) 0%, rgba(236, 72, 153, 0.1) 100%);
-  padding: 2rem;
-  border-radius: 12px;
+  padding: 2.5rem;
+  border-radius: 15px;
   border: 2px solid var(--primary-lighter);
   font-weight: 600;
   text-align: center;
   color: var(--text-muted);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 .certificate-grid span::before {
   content: '🎓';
   display: block;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .certificate-grid span:hover {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary-light) 100%);
   border-color: var(--primary);
-  box-shadow: 0 8px 20px var(--shadow-strong);
+  box-shadow: 0 12px 30px var(--shadow-strong);
   color: white;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
 }
 
 /* Contact Link */
@@ -296,34 +347,38 @@ body {
   transition: all 0.3s ease;
   border-bottom: 2px solid var(--gold);
   padding-bottom: 2px;
+  display: inline-block;
 }
 
 .contact-link:hover {
   color: var(--secondary-light);
   border-bottom-color: var(--secondary-light);
-  transform: scale(1.05);
-  display: inline-block;
+  transform: translateY(-2px);
 }
 
 /* Project Grid */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2.5rem;
 }
 
 /* Card Styles */
 .card {
   background: linear-gradient(135deg, white 0%, var(--rose) 100%);
-  padding: 2rem;
-  border-radius: 15px;
+  padding: 2.5rem;
+  border-radius: 18px;
   border: 2px solid var(--primary-lighter);
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px var(--shadow);
+  box-shadow: 0 8px 20px var(--shadow);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .card::before {
@@ -339,22 +394,22 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px) scale(1.02);
   border-color: var(--secondary-light);
-  box-shadow: 0 12px 30px var(--shadow-strong);
+  box-shadow: 0 15px 40px var(--shadow-strong);
 }
 
 .card:hover::before {
-  opacity: 0.2;
+  opacity: 0.25;
   top: -20%;
   right: -20%;
 }
 
 .card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
   color: var(--primary);
-  font-weight: 700;
+  font-weight: 800;
   font-family: 'Playfair Display', serif;
   position: relative;
   z-index: 1;
@@ -362,18 +417,19 @@ body {
 
 .card p {
   color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   position: relative;
   z-index: 1;
+  flex-grow: 1;
 }
 
 .card::after {
   content: '💖';
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
+  top: 20px;
+  right: 20px;
+  font-size: 1.8rem;
   opacity: 0;
   transition: all 0.3s ease;
 }
@@ -397,13 +453,14 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(90, 29, 77, 0.7);
+  background: rgba(90, 29, 77, 0.8);
   z-index: 1000;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
   animation: fadeIn 0.3s ease-out;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(5px);
+  overflow-y: auto;
 }
 
 @keyframes fadeIn {
@@ -414,21 +471,21 @@ body {
 .modal-content {
   background: linear-gradient(135deg, white 0%, var(--rose) 100%);
   border-radius: 20px;
-  padding: 2.5rem;
+  padding: 3rem;
   max-width: 900px;
   width: 100%;
-  max-height: 85vh;
-  overflow-y: auto;
   position: relative;
   animation: slideUp 0.3s ease-out;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
   border: 2px solid var(--primary-lighter);
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -443,20 +500,21 @@ body {
   margin-bottom: 2rem;
   border: 3px solid var(--primary-lighter);
   box-shadow: 0 8px 20px var(--shadow-strong);
+  display: block;
 }
 
 .modal-content h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
   color: var(--primary);
-  font-weight: 700;
+  font-weight: 800;
   font-family: 'Playfair Display', serif;
 }
 
 .modal-content p {
   color: var(--text-muted);
-  line-height: 1.8;
-  font-size: 0.95rem;
+  line-height: 1.9;
+  font-size: 1rem;
 }
 
 /* Carousel Controls */
@@ -471,10 +529,10 @@ body {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary-light) 100%);
   color: white;
   border: none;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -486,7 +544,7 @@ body {
 }
 
 .carousel-controls button:hover {
-  transform: scale(1.1) rotate(10deg);
+  transform: scale(1.15) rotate(10deg);
   box-shadow: 0 8px 20px var(--shadow-strong);
 }
 
@@ -497,8 +555,8 @@ body {
 /* Reveal Animation */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
 }
 
 .reveal.active {
@@ -510,10 +568,10 @@ body {
 footer {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary-light) 100%);
   text-align: center;
-  padding: 2.5rem;
+  padding: 3rem 2rem;
   color: white;
   border-top: 3px solid var(--gold);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -527,9 +585,21 @@ footer::after {
   margin-left: 0.5rem;
 }
 
+footer a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid var(--gold);
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -538,25 +608,161 @@ footer::after {
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, var(--primary), var(--secondary-light));
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, var(--primary-light), var(--secondary-light));
 }
 
-/* Responsive Design */
+/* Responsive Design - Tablets */
+@media (max-width: 1024px) {
+  .container {
+    padding: 4rem 1.5rem;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .modal-content {
+    padding: 2rem;
+  }
+}
+
+/* Responsive Design - Mobile */
 @media (max-width: 768px) {
   .nav {
-    gap: 1.5rem;
-    padding: 1rem;
-    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
   }
 
   .nav a {
     font-size: 0.9rem;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   
+  .container {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .container h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+  }
+
+  .skills-grid span {
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 4rem 1.5rem;
+    min-height: 80vh;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .hero-cta {
+    gap: 0.75rem;
+  }
+
+  .cta-button {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+
+  .carousel-controls {
+    margin-bottom: 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .carousel-controls button {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 1.75rem;
+    min-height: 180px;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .modal-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .certificate-grid span {
+    padding: 2rem;
+  }
+
+  footer {
+    padding: 2rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive Design - Small Mobile */
+@media (max-width: 480px) {
+  .nav {
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav a {
+    font-size: 0.8rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+    min-height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
   .container {
     padding: 2.5rem 1rem;
   }
@@ -564,66 +770,112 @@ footer::after {
   .container h2 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
-  }
-  
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding-bottom: 0.75rem;
   }
 
-  .hero {
-    padding: 4rem 1rem;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-  
-  .modal-content {
-    padding: 1.5rem;
-  }
-
-  .carousel-controls {
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav {
-    gap: 1rem;
-    padding: 0.75rem;
-  }
-
-  .nav a {
-    font-size: 0.85rem;
-  }
-
-  .hero h1 {
+  .container h2::before {
     font-size: 1.5rem;
-    margin-bottom: 0.25rem;
+    margin-right: 0.5rem;
   }
 
-  .hero p {
-    font-size: 0.9rem;
+  .project-grid {
+    gap: 1.25rem;
   }
 
-  .container h2 {
-    font-size: 1.25rem;
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .skills-grid span {
+    padding: 1.25rem 0.75rem;
+    font-size: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .card {
+    padding: 1.5rem;
+    min-height: 160px;
   }
 
   .card h3 {
     font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+
+  .modal-content {
+    padding: 1.25rem;
+    margin: 1rem;
   }
 
   .modal-content h3 {
     font-size: 1.4rem;
+    margin-bottom: 1rem;
   }
-  
-  .container h2::before {
-    display: none;
+
+  .modal-content p {
+    font-size: 0.9rem;
+  }
+
+  .carousel-controls {
+    margin-bottom: 1.25rem;
+  }
+
+  .carousel-controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .certificate-grid span {
+    padding: 1.5rem;
+  }
+
+  .certificate-grid span::before {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .nav a {
+    font-size: 0.75rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .container h2 {
+    font-size: 1.3rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card h3 {
+    font-size: 1rem;
   }
 }
   </style>
@@ -633,6 +885,10 @@ footer::after {
 <header class="hero">
   <h1>✨ Edelyn Y. Malillin ✨</h1>
   <p>IT Professional • Full Stack Developer</p>
+  <div class="hero-cta">
+    <a href="#projects" class="cta-button">View Projects</a>
+    <a href="#contact" class="cta-button">Get In Touch</a>
+  </div>
 </header>
 
 <nav class="nav">
@@ -645,7 +901,7 @@ footer::after {
 
 <section id="about" class="container reveal">
   <h2>About Me</h2>
-  <p>Passionate about turning data into meaningful insights that inspire smarter decisions and drive innovation. Dedicated to uncovering patterns, solving problems, and transforming raw information into impactful stories that create real value.
+  <p>Passionate about turning data into meaningful insights that inspire smarter decisions and drive innovation. Dedicated to uncovering patterns, solving problems, and transforming raw information into strategic advantages. With expertise in full-stack development and data analytics, I create solutions that bridge technology and business impact.</p>
 </section>
 
 <section id="skills" class="container reveal">
@@ -657,6 +913,12 @@ footer::after {
     <span>Microsoft Excel</span>
     <span>Power BI</span>
     <span>Business Intelligence</span>
+    <span>Full Stack Development</span>
+    <span>TypeScript</span>
+    <span>Python</span>
+    <span>Database Design</span>
+    <span>API Development</span>
+    <span>UI/UX Design</span>
   </div>
 </section>
 
@@ -675,7 +937,7 @@ footer::after {
     <div class="card" onclick="openModal(
       ['assets/Payroll/payroll_dashboard.jpg','assets/Payroll/payroll_employees.jpg','assets/Payroll/payroll_process.jpg','assets/Payroll/payroll_reports.jpg','assets/Payroll/payroll_settings.jpg'],
       'Payroll Management System',
-      'Desktop application designed for comprehensive payroll administration. Features include employee records management, automated salary computation, salary advance processing, and integrated bene[...]
+      'Desktop application designed for comprehensive payroll administration. Features include employee records management, automated salary computation, salary advance processing, and integrated benefits tracking. Streamlines HR operations with advanced reporting and analytics capabilities.'
     )">
       <h3>Payroll System</h3>
       <p>Desktop Application • Payroll Processing</p>
@@ -684,7 +946,7 @@ footer::after {
     <div class="card" onclick="openModal(
       ['assets/Mers/login_mers.jpg','assets/Mers/physician_home.jpg', 'assets/Mers/physician_dashboard.jpg', 'assets/Mers/user_dashboard.jpg'],
       'Medical Records System',
-      'Web-based student medical record management platform with appointment scheduling, medical history tracking, and secure data storage. Built with modern technologies for efficient healthcare admi[...]
+      'Web-based student medical record management platform with appointment scheduling, medical history tracking, and secure data storage. Built with modern technologies for efficient healthcare administration and patient privacy protection.'
     )">
       <h3>Medical Record System</h3>
       <p>Web Application • Healthcare Management</p>
@@ -692,8 +954,8 @@ footer::after {
 
     <div class="card" onclick="openModal(
       [],
-      'Mobile Application',
-      'Cross-platform mobile application developed with Flutter framework. Features comprehensive song management functionality with secure authentication using OTP verification system.'
+      'Music Management App',
+      'Cross-platform mobile application developed with Flutter framework. Features comprehensive song management functionality with secure authentication using OTP verification system. Provides seamless user experience across iOS and Android platforms.'
     )">
       <h3>Music Management App</h3>
       <p>Mobile Application • Flutter</p>
@@ -702,7 +964,7 @@ footer::after {
     <div class="card" onclick="openModal(
       ['assets/Pos/cashier.jpg','assets/Pos/inventory.jpg', 'assets/Pos/orders.jpg', 'assets/Pos/reports.jpg','assets/Pos/users.jpg','assets/Pos/roles.jpg'],
       'Point of Sale System',
-      'Enterprise-grade desktop POS application developed using modern technologies. Includes inventory management, sales tracking, comprehensive reporting, user management, and role-based access cont[...]
+      'Enterprise-grade desktop POS application developed using modern technologies. Includes inventory management, sales tracking, comprehensive reporting, user management, and role-based access controls. Designed for scalability and high-performance retail operations.'
     )">
       <h3>POS System</h3>
       <p>Desktop Application • Tauri, TypeScript, Python</p>
@@ -713,15 +975,15 @@ footer::after {
 
 <section id="contact" class="container reveal">
   <h2>Get In Touch</h2>
-  <p style="margin-bottom: 2rem;">I'm available for professional inquiries, collaboration, and project discussions.</p>
+  <p>I'm available for professional inquiries, collaboration, and project discussions. Let's connect and create something amazing together.</p>
 
-  <p style="margin-bottom: 1rem;">
+  <p style="margin-bottom: 1.5rem;">
     <strong>Phone:</strong> <a href="tel:+639197762601" class="contact-link">+63 919-776-2601</a>
   </p>
 
-  <p style="margin-bottom: 1rem;">
+  <p style="margin-bottom: 1.5rem;">
     <strong>Email:</strong> 
-    <a href="malillinedelyn0@gmail.com.com?subject=Professional Inquiry" id="contactBtn" class="contact-link">
+    <a href="mailto:malillinedelyn0@gmail.com?subject=Professional Inquiry" id="contactBtn" class="contact-link">
       malillinedelyn0@gmail.com
     </a>
   </p>
